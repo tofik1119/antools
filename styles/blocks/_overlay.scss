@@ -1,17 +1,17 @@
 @use '/styles/helpers/' as *;
 
 .overlay {
-   position: fixed;
-   width: 100vw;
-   height: 100vh;
-   top: 0;
-   z-index: 0;
-   display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  z-index: 10;
+  display: none;
 
-   background-color: rgba(29, 35, 39, 0.425);
-   backdrop-filter: blur(rem(1));
+  background-color: rgba(29, 35, 39, 0.425);
+  backdrop-filter: blur(rem(1));
 
-   &--is-active {
-      display: flex;
-   }
+  &--is-active {
+    display: flex;
+  }
 }

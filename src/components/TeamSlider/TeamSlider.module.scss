@@ -1,0 +1,40 @@
+.slider {
+  width: 100%;
+  padding-bottom: 56px;
+}
+
+.button {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  color: var(--color-ascent);
+  font-size: 32px;
+  transform: translateY(-50%);
+}
+
+.previous {
+  left: -10px;
+}
+
+.next {
+  right: -10px;
+}
+
+.slider :global(.swiper-pagination-bullet) {
+  width: 46px;
+  height: 6px;
+  border-radius: 4px;
+  background: var(--color-form);
+  opacity: 1;
+}
+
+.slider :global(.swiper-pagination-bullet-active) {
+  height: 8px;
+  background: var(--color-ascent);
+}
+
+@media (max-width: 767px) {
+  .button {
+    display: none;
+  }
+}

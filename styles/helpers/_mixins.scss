@@ -2,93 +2,93 @@
 @use 'functions' as *;
 
 @mixin fluid-text($max: 48, $min: 16) {
-   font-size: fluid($max, $min);
-   }
+  font-size: fluid($max, $min);
+}
 
-   @mixin hide {
-   opacity: 0;
-   visibility: hidden;
-   }
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
 
-   @mixin show {
-   opacity: 1;
-   visibility: visible;
-   }
+@mixin show {
+  opacity: 1;
+  visibility: visible;
+}
 
-   @mixin flex-center($isInline: false) {
-   @if $isInline {
-      display: inline-flex;
-   } @else  {
-      display: flex;
-   }
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
 
-   justify-content: center;
-   align-items: center;
-   }
+  justify-content: center;
+  align-items: center;
+}
 
-   @mixin abs-center {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   translate: -50% -50%;
-   }
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
 
-   @mixin abs-x {
-   position: absolute;
-   left: 50%;
-   translate: -50%;
-   }
+@mixin abs-x {
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+}
 
-   @mixin abs-y {
-   position: absolute;
-   top: 50%;
-   translate: 0 -50%;
-   }
+@mixin abs-y {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+}
 
-   @mixin square($size) {
-   width: rem($size);
-   height: rem($size);
-   }
+@mixin square($size) {
+  width: rem($size);
+  height: rem($size);
+}
 
-   @mixin visually-hidden {
-   position: absolute !important;
-   width: 1px !important;
-   height: 1px !important;
-   margin: -1px !important;
-   border: 0 !important;
-   padding: 0 !important;
-   white-space: nowrap !important;
-   clip-path: inset(100%) !important;
-   clip: rect(0 0 0 0) !important;
-   overflow: hidden !important;
-   }
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
 
 @mixin gradient-border(
-   $weight: 1,
-   $style: solid,
-   $angle: 90deg,
-   $color1,
-   $color2,
-   $radius: 0) {
-      
-      z-index: 1;
+  $weight: 1,
+  $style: solid,
+  $angle: 90deg,
+  $color1,
+  $color2,
+  $radius: 0
+) {
+  z-index: 1;
 
-   &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 0;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 
-      border: rem($weight) $style transparent;
-      border-radius: $radius;
+    border: rem($weight) $style transparent;
+    border-radius: $radius;
 
-      background:
-         linear-gradient(var(--color-form), var(--color-form)) padding-box,
-         linear-gradient($angle, $color1, $color2) border-box;
-   }
+    background:
+      linear-gradient(var(--color-form), var(--color-form)) padding-box,
+      linear-gradient($angle, $color1, $color2) border-box;
+  }
 
-   > * {
-      position: relative;
-      z-index: 1;
-   }
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 }

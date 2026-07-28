@@ -1,0 +1,7 @@
+.card {
+  min-height: 100%;
+}
+
+.saveButton[aria-pressed='true'] {
+  background-color: rgba(255, 110, 48, 0.16);
+}

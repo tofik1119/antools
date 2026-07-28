@@ -1,44 +1,44 @@
 @use 'helpers' as *;
 
 .container {
-   max-width: var(--container-width);
-   margin-inline: auto;
-   margin-bottom: rem(200);
+  max-width: var(--container-width);
+  margin-inline: auto;
+  margin-bottom: rem(200);
 
-   @include laptop {
-      margin-inline: rem(16);
-   }
+  @include laptop {
+    margin-inline: rem(16);
+  }
 
-   @include mobile {
-      margin-inline: rem(8);
-   }
+  @include mobile {
+    margin-inline: rem(8);
+  }
 
-   @include tablet {
-      margin-bottom: rem(150);
-   }
+  @include tablet {
+    margin-bottom: rem(150);
+  }
 
-   @include mobile {
-      margin-bottom: rem(100);
-   }
+  @include mobile {
+    margin-bottom: rem(100);
+  }
 }
 
 .visually-hidden {
-   @include visually-hidden;
+  @include visually-hidden;
 }
 
 .text--ascent {
-   color: var(--color-ascent);
+  color: var(--color-ascent);
 
-   @include hover {
-      color: var(--color-text-ascent);
-   }
+  @include hover {
+    color: var(--color-text-ascent);
+  }
 }
 
 .icon--transparent {
-   filter: brightness(0) invert(1);
-   opacity: 0.3;
+  filter: brightness(0) invert(1);
+  opacity: 0.3;
 }
 
 .text--transparent {
-   color: var(--color-white--transparent);
+  color: var(--color-white--transparent);
 }

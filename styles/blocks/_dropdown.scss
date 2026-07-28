@@ -1,104 +1,69 @@
 @use '/styles/helpers/' as *;
 
 .dropdown__menu-button {
-   position: relative;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: rem(8);
+
+  &[aria-expanded='true'] .dropdown__chevron {
+    transform: rotate(180deg);
+  }
+}
+
+.dropdown__chevron {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: transform var(--transition-duration);
 }
 
 .dropdown__menu {
-   font-size: rem(14);
-   position: absolute;
-   transform: translateX(-50%);
-   left: 50%;
-   top: calc(100% + rem(14));
-   
-   background: var(--color-form);
-   border-radius: var(--border-radius-medium);
+  font-size: rem(14);
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: calc(100% + rem(14));
 
-   display: none;
-   flex-direction: column;
-   row-gap: rem(4);
+  background: var(--color-form);
+  border-radius: var(--border-radius-medium);
 
-   &--is-open {
-      display: flex;
-   }
+  display: none;
+  flex-direction: column;
+  row-gap: rem(4);
 
-   @include gradient-border(
-   2,
-   solid,
-   90deg,
-   rgba(255, 255, 255, 0.1),
-   rgba(255, 255, 255, 0),
-   var(--border-radius-medium));
-   
-   a {
-      text-decoration: none;
-      padding: rem(4) rem(8);
+  &--is-open {
+    display: flex;
+  }
 
-      &:first-child {
-         padding-top: rem(12);
-         border-radius: var(--border-radius-medium) var(--border-radius-medium) 0 0;
-      }
+  @include gradient-border(
+    2,
+    solid,
+    90deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0),
+    var(--border-radius-medium)
+  );
 
-      &:last-child {
-         padding-bottom: rem(12);
-         border-radius: 0 0 var(--border-radius-medium) var(--border-radius-medium);
-      }
+  a {
+    text-decoration: none;
+    padding: rem(4) rem(8);
 
-      @include hover {
-         background-color: #333A40;
-      }
-   }
+    &:first-child {
+      padding-top: rem(12);
+      border-radius: var(--border-radius-medium);
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+
+    &:last-child {
+      padding-bottom: rem(12);
+      border-radius: var(--border-radius-medium);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    @include hover {
+      background-color: #333a40;
+    }
+  }
 }
-
-
-// .dropdown-button {
-//    position: relative;
-// }
-
-// .dropdown-menu {
-//    position: absolute;
-//    top: calc(100% + rem(14));
-//    min-width: 100%;
-
-//    padding-block: rem(8);
-//    background: var(--color-form);
-
-//    display: flex;
-//    flex-direction: column;
-//    row-gap: rem(4);
-//    justify-content: left;
-//    border-radius: var(--border-radius-medium);
-
-//    &::before {
-//       content: "";
-//       position: absolute;
-//       z-index: -1;
-//       inset: -2px;
-
-//       border-radius: inherit;
-
-
-//       background:
-//          linear-gradient(var(--color-form), var(--color-form)) padding-box,
-//          linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)) border-box;
-//          border: 2px solid transparent;
-//          border-radius: var(--border-radius-medium);
-//    }
-
-//    a {
-//       text-decoration: none;
-//       padding: rem(4) rem(8);
-
-//       @include hover {
-//          background-color: #333A40;
-//       }
-
-//       &:first-child {
-//          border-radius: 10px 10px 0 0;
-//       }
-
-//       &:last-child {
-//          border-radius: 0 0 10px 10px;
-//       }
-//    }
-// }

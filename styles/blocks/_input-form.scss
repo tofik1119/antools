@@ -1,20 +1,20 @@
 @use '/styles/helpers/' as *;
 
 .input-form {
-   background-color: var(--color-form);
-   border-radius: var(--border-radius-medium);
-   max-width: rem(500);
-   padding: rem(8) rem(10);
-   display: flex;
-   border: none;
+  background-color: var(--color-form);
+  border-radius: var(--border-radius-medium);
+  max-width: rem(500);
+  padding: rem(8) rem(10);
+  display: flex;
+  border: none;
 
-   &__input {
-      padding-left: rem(6);
-      position: relative;
-      flex: 1;
-      outline: none;
-      background-color: inherit;
-      border: none;
-      margin-right: rem(10);
-   }
+  &__input {
+    padding-left: rem(6);
+    position: relative;
+    flex: 1;
+    outline: none;
+    background-color: inherit;
+    border: none;
+    margin-right: rem(10);
+  }
 }

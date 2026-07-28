@@ -1,28 +1,28 @@
 @use 'helpers' as *;
-   
+
 :root {
-   --color-absolute-white: #ffffffd0;
-   --color-white-transparent: #FFFFFF8C;
-   --color-main: #1E252B;
-   --color-ascent: #ff6e30;
-   --color-form: #283036;
-   --color-text-ascent: #ffa5378C;
-   --color-text-ascent-isActive: #ffa537;
-   --border-gradient: linear-gradient(
-   45deg,
-   rgba(255, 255, 255, 0.1),
-   rgba(255, 255, 255, 0)
-   );
+  --color-absolute-white: #ffffffd0;
+  --color-white-transparent: #ffffff8c;
+  --color-main: #1e252b;
+  --color-ascent: #ff6e30;
+  --color-form: #283036;
+  --color-text-ascent: #ffa5378c;
+  --color-text-ascent-isActive: #ffa537;
+  --border-gradient: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
 
-   --font-family: "Poppins", sans-serif;
-   --second-family: "Lora", sans-serif;
+  --font-family: 'Poppins', sans-serif;
+  --second-family: 'Lora', sans-serif;
 
-   --border-radius-small: #{rem(8)};
-   --border-radius-medium: #{rem(15)};
+  --border-radius-small: #{rem(8)};
+  --border-radius-medium: #{rem(15)};
 
-   --border: 1px solid var(--color-ascent);
+  --border: 1px solid var(--color-ascent);
 
-   --container-width: #{rem(1224)};
+  --container-width: #{rem(1224)};
 
-   --transition-duration: 0.2s;
+  --transition-duration: 0.2s;
 }

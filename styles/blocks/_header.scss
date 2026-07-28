@@ -1,58 +1,80 @@
 @use '/styles/helpers/' as *;
 
 .header {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-between;
-   margin-top: rem(26);
-   margin-bottom: rem(52);
-   align-items: center;
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  width: 100vw;
+  max-width: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0;
+  margin-inline: calc(50% - 50vw);
+  margin-bottom: rem(52);
+  align-items: center;
+  padding: rem(16) max(rem(16), calc((100vw - var(--container-width)) / 2));
+  background-color: rgba(29, 35, 39, 0.88);
+  backdrop-filter: blur(rem(14));
 
-   @include tablet {
-      margin-top: rem(12);
-      margin-bottom: rem(36);
-   }
+  @include tablet {
+    margin-bottom: rem(36);
+  }
 
-   &__logo {
-      max-height: rem(38);
-   }
+  &__logo {
+    max-height: rem(38);
+  }
 
-   &__menu-list {
-      display: flex;
-      flex-direction: row;
-      column-gap: rem(48);
-      align-items: center;
+  &__menu-list {
+    display: flex;
+    flex-direction: row;
+    column-gap: rem(48);
+    align-items: center;
 
-      @include tablet {
-         column-gap: rem(16);
-      }
+    @include tablet {
+      column-gap: rem(16);
+    }
 
-      @include mobile {
-         display: none;
-      }
-   }
+    @include mobile {
+      display: none;
+    }
+  }
 
-   &__menu-item {
-      position: relative;
-   }
+  &__menu-item {
+    position: relative;
+  }
 
-   &__menu-link {
-      padding: rem(6) 0;
-      background-color: transparent;
-      border: none;
-   }
+  &__menu-link {
+    padding: rem(6) 0;
+    background-color: transparent;
+    border: none;
+  }
 
-   &__authorization-menu-list {
-      display: flex;
-      flex-direction: row;
-      column-gap: rem(40);
-      align-items: center;
-   }
+  &__authorization-menu-list {
+    display: flex;
+    flex-direction: row;
+    column-gap: rem(40);
+    align-items: center;
+  }
 
-   &__authorization-menu-button--transparent {
-      background-color: transparent;
-      border: none;
-      font-weight: 600;
-      padding: 0 0;
-   }
+  &__authorization-menu-button--transparent {
+    background-color: transparent;
+    border: none;
+    font-weight: 600;
+    padding: 0 0;
+  }
+
+  &__account {
+    display: flex;
+    align-items: center;
+    gap: rem(12);
+  }
+
+  &__account-email {
+    max-width: rem(160);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: rem(14);
+  }
 }

@@ -1,43 +1,54 @@
 @use 'helpers' as *;
 
 body {
-   @include fluid-text(18, 16);
+  @include fluid-text(18, 16);
 
-   font-family: var(--font-family);
-   color: var(--color-white-transparent);
-   background-color: var(--color-main);
-   position: relative;
+  font-family: var(--font-family);
+  color: var(--color-white-transparent);
+  background-color: var(--color-main);
+  position: relative;
 }
 
-   h1, .h1,
-   h2, .h2,
-   h3, .h3,
-   h4, .h4,
-   h5, .h5,
-   h6, .h6 {
-      color: var(--color-absolute-white);
-      font-weight: 500;
-      font-family: var(--font-family);
-      font-size: rem(48);
-      line-height: 1.3;
-      color: #FFFFFFE5;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: var(--color-absolute-white);
+  font-weight: 500;
+  font-family: var(--font-family);
+  font-size: rem(48);
+  line-height: 1.3;
+  color: #ffffffe5;
 }
 
-h2, .h2 {
-   @include fluid-text(48, 32);
-}   
-
-h3, .h3 {
-   @include fluid-text(32, 24);
+h2,
+.h2 {
+  @include fluid-text(48, 32);
 }
 
-h4, .h4 {
-   font-size: #{rem(24)};
-}   
+h3,
+.h3 {
+  @include fluid-text(32, 24);
+}
 
-h5, .h5,
-h6, .h6 {
-      @include fluid-text(20, 16)
+h4,
+.h4 {
+  font-size: #{rem(24)};
+}
+
+h5,
+.h5,
+h6,
+.h6 {
+  @include fluid-text(20, 16);
 }
 
 a,
@@ -47,24 +58,24 @@ select,
 input,
 textarea,
 svg * {
-   color: inherit;
-   font-size: rem(16);
-   // доделать ховер с обводкой 
-      @include hover{
-         color: var(--color-ascent);
-      }
+  color: inherit;
+  font-size: rem(16);
+  // доделать ховер с обводкой
+  @include hover {
+    color: var(--color-ascent);
+  }
 
-   transition-duration: var(--transition-duration);
+  transition-duration: var(--transition-duration);
 }
 
 a {
-   &[class] {
-      text-decoration: none;
-   }
+  &[class] {
+    text-decoration: none;
+  }
 }
 
 :focus-visible {
-   outline: rem(2) dashed var(--color-absolute-white);
-   outline-offset: rem(4);
-   transition-duration: 0s !important;
+  outline: rem(2) dashed var(--color-absolute-white);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
 }

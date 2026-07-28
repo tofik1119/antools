@@ -1,82 +1,105 @@
 @use '/styles/helpers/' as *;
 
 .authorization {
-   position: fixed;
-   z-index: 20;
-   transform: translate(-50%, -50%);
-   top: 50%;
-   left: 50%;
-   background-color: #242C31;
-   padding: rem(22) rem(18);
+  position: fixed;
+  z-index: 20;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: #242c31;
+  padding: rem(22) rem(18);
 
-   display: none;
-   &--is-open {
-      display: flex;
-   }
+  display: none;
+  &--is-open {
+    display: flex;
+  }
 
-   flex-direction: column;
-   align-items: center;
-   text-align: center;
-   gap: rem(24);
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: rem(24);
 
-   border-radius: var(--border-radius-medium);
-   &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
+  border-radius: var(--border-radius-medium);
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
 
-      border: rem(2) solid transparent;
-      border-radius: var(--border-radius-medium);
-      background:
-         linear-gradient(110deg,rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)) border-box;
+    border: rem(2) solid transparent;
+    border-radius: var(--border-radius-medium);
+    background: linear-gradient(
+        110deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0)
+      )
+      border-box;
 
-      -webkit-mask:
+    -webkit-mask:
       linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
-      }
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 
-   overflow: hidden;
-   &::after {
-      content: "";
-      position: absolute;
-      width: rem(100);
-      height: rem(100);
-      right: rem(10);
-      top: rem(-50);
-      filter: blur(rem(40));
-      background: radial-gradient(
-      circle,
-   var(--color-ascent),
-   #242C32 70%);
-   }
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    width: rem(100);
+    height: rem(100);
+    right: rem(10);
+    top: rem(-50);
+    filter: blur(rem(40));
+    background: radial-gradient(circle, var(--color-ascent), #242c32 70%);
+  }
 
-   &__header {
-      display: flex;
-      flex-direction: column;
-      gap: rem(12);
-   }
-   
-   &__form {
-      display: flex;
-      flex-direction: column;
-      gap: rem(22);
-      width: 100%;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: rem(12);
+  }
 
+  &__close {
+    position: absolute;
+    top: rem(6);
+    right: rem(12);
+    border: 0;
+    background: transparent;
+    font-size: rem(28);
+    line-height: 1;
+    cursor: pointer;
+  }
 
-      input {
-         outline: none;
-         padding: rem(20) rem(12);
-      }
-   }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: rem(22);
+    width: 100%;
 
-   &__footer {
-      font-size: rem(14);
+    input {
+      outline: none;
+      padding: rem(20) rem(12);
+    }
+  }
 
-      span {
-         cursor: pointer;
-      }
-   }
+  &__footer {
+    font-size: rem(14);
+
+    span {
+      cursor: pointer;
+    }
+  }
+
+  &__switch {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  &__message {
+    font-size: rem(14);
+    color: var(--color-ascent);
+  }
 }

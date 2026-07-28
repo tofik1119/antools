@@ -1,57 +1,63 @@
 @use '/styles/helpers/' as *;
 
 .new-tools {
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
-   column-gap: rem(120);
-   
-   //  reduced the margin leading into the next section.
-   margin-bottom: rem(40);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: rem(120);
 
-   @include laptop {
-      column-gap: rem(10);
-   }
+  //  reduced the margin leading into the next section.
+  margin-bottom: rem(40);
 
-   @include tablet {
+  @include laptop {
+    column-gap: rem(10);
+  }
+
+  @include tablet {
+    display: flex;
+    flex-direction: column;
+    gap: rem(52);
+
+    //  reduced the margin leading into the next section.
+    margin-bottom: rem(80);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+    align-items: start;
+
+    @include tablet {
+      align-items: center;
+      padding-inline: rem(36);
+      text-align: center;
+    }
+  }
+
+  &__button {
+    margin-top: rem(30);
+    padding: rem(15) rem(40);
+
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: rem(16);
+
+    @include mobile {
       display: flex;
       flex-direction: column;
-      gap: rem(52);
+    }
+  }
 
-      //  reduced the margin leading into the next section.
-      margin-bottom: rem(80);
-   }
-
-   &__header {
-      display: flex;
-      flex-direction: column;
-      gap: rem(30);
-      align-items: start;
-
-      @include tablet {
-         align-items: center;
-         padding-inline: rem(36);
-         text-align: center;
-      }
-   }
-
-   &__button {
-      margin-top: rem(30);
-      padding: rem(15) rem(40);
-
-      @include tablet {
-         margin-top: 0;
-      }
-   }
-
-   &__list {
-      display: grid;
-      grid-template-columns: repeat(2, auto);
-      grid-template-rows: repeat(2, 1fr);
-      gap: rem(16);
-
-      @include mobile-s {
-         display: flex;
-         flex-direction: column;
-      }
-   }
+  &__item {
+    min-width: 0;
+    height: 100%;
+  }
 }

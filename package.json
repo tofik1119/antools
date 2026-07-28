@@ -1,5 +1,5 @@
 {
-  "name": "future-tech",
+  "name": "antools",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,13 +7,26 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "sass-watch": "sass --watch ."
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@vitejs/plugin-react": "^5.1.1",
+    "eslint": "^10.8.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.3",
+    "globals": "^17.8.0",
+    "prettier": "^3.9.6",
     "sass": "^1.97.1",
     "vite": "^7.2.4"
   },
   "dependencies": {
-    "@a1rth/css-normalize": "^1.2.4"
+    "@a1rth/css-normalize": "^1.2.4",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "swiper": "^14.0.6"
   }
 }

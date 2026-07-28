@@ -1,28 +1,28 @@
 @use '/styles/helpers/' as *;
 
 .button {
-   color: var(--color-absolute-white);
-   font-weight: 600;
-   padding: rem(12) rem(28);
-   background-color: var(--color-ascent);
-   border-radius: var(--border-radius-small);
-   border: 1px solid transparent;
+  color: var(--color-absolute-white);
+  font-weight: 600;
+  padding: rem(12) rem(28);
+  background-color: var(--color-ascent);
+  border-radius: var(--border-radius-small);
+  border: 1px solid transparent;
 
-   @include mobile {
-      padding: rem(6) rem(16);
-   }
+  @include mobile {
+    padding: rem(6) rem(16);
+  }
 
-   @include hover {
-      color: var(--color-ascent);
-      background-color: transparent;
-      border: 1px solid var(--color-ascent);;
-   }
+  @include hover {
+    color: var(--color-ascent);
+    background-color: transparent;
+    border: 1px solid var(--color-ascent);
+  }
 
-   &--transparent {
-      font-size: rem(20);
-      color: var(--color-ascent);
-      background-color: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: rem(17) rem(38);
-   }
+  &--transparent {
+    font-size: rem(20);
+    color: var(--color-ascent);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: rem(17) rem(38);
+  }
 }

@@ -1,113 +1,120 @@
 @use '/styles/helpers/' as *;
 
 .tool-card {
-   padding: rem(30);
-   display: flex;
-   flex-direction: column;
-   gap: rem(30);
-   border-radius: var(--border-radius-medium);
-   overflow: hidden;
-   z-index: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: rem(320);
+  height: 100%;
+  box-sizing: border-box;
+  padding: rem(30);
+  display: flex;
+  flex-direction: column;
+  gap: rem(30);
+  border-radius: var(--border-radius-medium);
+  overflow: hidden;
+  z-index: 1;
+  transition-duration: var(--transition-duration);
 
-   @include tablet {
-      padding: rem(15);
-   }
+  @include tablet {
+    min-height: rem(290);
+    padding: rem(15);
+  }
 
-   @include hover {
-      backdrop-filter: blur(1px);
-      background: #242C32;
-      transform: translate(0, rem(-20));
-      transition-duration: var(--transition-duration);
-      color: var(--color-absolute-white);
+  @include hover {
+    backdrop-filter: blur(1px);
+    background: #242c32;
+    transform: translate(0, rem(-20));
+    color: var(--color-absolute-white);
 
-      &::after {
-         content: "";
-         position: absolute;
-         width: rem(100);
-         height: rem(100);
-         right: rem(-40);
-         top: rem(-50);
-         filter: blur(rem(40));
-         background: radial-gradient(
-         circle,
-      var(--color-ascent),
-      #242C32 70%);
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      width: rem(100);
+      height: rem(100);
+      right: rem(-40);
+      top: rem(-50);
+      filter: blur(rem(40));
+      background: radial-gradient(circle, var(--color-ascent), #242c32 70%);
+    }
 
-      &::before {
-         content: "";
-         position: absolute;
-         inset: 0;
-         z-index: 0;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
 
-         border: rem(3) solid transparent;
-         border-radius: var(--border-radius-medium);
+      border: rem(3) solid transparent;
+      border-radius: var(--border-radius-medium);
 
-         background:
-            linear-gradient(var(--color-form), var(--color-form)) padding-box,
-            linear-gradient(to right,
+      background:
+        linear-gradient(var(--color-form), var(--color-form)) padding-box,
+        linear-gradient(
+            to right,
             rgba(255, 255, 255, 0.1) 0%,
             rgba(255, 255, 255, 0) 31%,
             rgba(255, 255, 255, 0.1) 47%,
-            rgba(255, 255, 255, 0) 100%) border-box;
-      }
-   }
+            rgba(255, 255, 255, 0) 100%
+          )
+          border-box;
+    }
+  }
 
-   > * {
-      position: relative;
-      z-index: 1;
-   }
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 
-   &__header {
-      display: flex;
-      flex-direction: row;
-      gap: rem(40);
-      align-items: center;
-   }
+  &__header {
+    display: flex;
+    flex-direction: row;
+    gap: rem(40);
+    align-items: center;
+  }
 
-   &__meta {
-      display: flex;
-      flex-direction: column;
-      gap: rem(3);
-   }
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: rem(3);
+  }
 
-   &__description {
-      font-size: rem(16);
-      line-height: 1.9;
-   }
+  &__description {
+    flex-grow: 1;
+    font-size: rem(16);
+    line-height: 1.9;
+  }
 
-   &__actions {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-   }
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-   &__primary-actions {
-      display: flex;
-      flex-direction: row;
-      gap: rem(12);
-   }
+  &__primary-actions {
+    display: flex;
+    flex-direction: row;
+    gap: rem(12);
+  }
 
-   &__actions-icon-button {
-      background-color: transparent;
-      border: none;
-      padding: rem(7);
-      border-radius: var(--border-radius-small);
+  &__actions-icon-button {
+    background-color: transparent;
+    border: none;
+    padding: rem(7);
+    border-radius: var(--border-radius-small);
 
-      @include hover {
-         box-shadow: 0 0 rem(5) var(--color-main);
-      }
-   }
+    @include hover {
+      box-shadow: 0 0 rem(5) var(--color-main);
+    }
+  }
 
-   &__secondary-actions a {
-      text-decoration: none;
-      padding: rem(9) rem(35);
-      border-radius: var(--border-radius-small);
+  &__secondary-actions a {
+    text-decoration: none;
+    padding: rem(9) rem(35);
+    border-radius: var(--border-radius-small);
 
-      @include hover {
-         background-color: var(--color-ascent);
-         color: var(--color-absolute-white);
-      }
-   }
+    @include hover {
+      background-color: var(--color-ascent);
+      color: var(--color-absolute-white);
+    }
+  }
 }

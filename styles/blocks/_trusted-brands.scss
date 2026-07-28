@@ -1,70 +1,67 @@
 @use '/styles/helpers/' as *;
 
 .trusted-brands {
-   display: flex;
-   flex-direction: column;
-   gap: rem(40);
-   padding: rem(55) rem(80);
-   overflow: hidden;
-   background-color: #21282F;
-   border-radius: rem(25);
-   backdrop-filter: blur(1px);
+  display: flex;
+  flex-direction: column;
+  gap: rem(40);
+  padding: rem(55) rem(80);
+  overflow: hidden;
+  background-color: #21282f;
+  border-radius: rem(25);
+  backdrop-filter: blur(1px);
 
-   @include tablet {
-      padding: rem(25) rem(30);
-      gap: rem(20);
-   }
+  @include tablet {
+    padding: rem(25) rem(30);
+    gap: rem(20);
+  }
 
-   &::after {
-      content: "";
-      width: rem(160);
-      height: rem(160);
-      position: absolute;
-      top: rem(-80);
-      left: rem(-80);
-      background: radial-gradient(
-         circle, 
-         #FF4842,
-         #21282F 70%);
-      filter: blur(rem(60));
-   }
+  &::after {
+    content: '';
+    width: rem(160);
+    height: rem(160);
+    position: absolute;
+    top: rem(-80);
+    left: rem(-80);
+    background: radial-gradient(circle, #ff4842, #21282f 70%);
+    filter: blur(rem(60));
+  }
 
-   @include gradient-border (
-   2,
-   solid,
-   180deg,
-   rgba(255, 255, 255, 0.10),
-   rgba(255, 255, 255, 0),
-   rem(25)
-   );
+  @include gradient-border(
+    2,
+    solid,
+    180deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0),
+    rem(25)
+  );
 
-   &__title {
-      text-align: center;
-   }
+  &__title {
+    text-align: center;
+  }
 
-   &__list {
-      display: flex;
-      flex-direction: row;
+  &__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: rem(25);
+    align-items: center;
+
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
       justify-content: space-between;
-      gap: rem(25);
-      align-items: center;
+    }
+  }
 
-      @include mobile {
-         display: grid;
-         grid-template-columns: repeat(2, 1fr);
-         grid-template-rows: repeat(2, 1fr);
-         justify-content: space-between;
+  &__item {
+    justify-self: center;
+
+    @include hover {
+      .trusted-brands__link {
+        filter: none;
+        opacity: 1;
       }
-   }
-
-   &__item {
-      justify-self: center;
-
-      @include hover {
-         .trusted-brands__link {
-            filter: none;
-            opacity: 1;
-         }
-      }
-   }
+    }
+  }
 }

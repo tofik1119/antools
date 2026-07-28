@@ -1,31 +1,31 @@
 @use '/styles/helpers/' as *;
 
 .join-us {
-   display: flex;
-   flex-direction: column;
-   text-align: center;
-   align-items: center;
-   justify-content: space-between;
-   gap: rem(25);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(25);
 
-   &__mail-form {
-      margin-top: rem(75);
+  &__mail-form {
+    margin-top: rem(75);
+    flex: 1;
+
+    @include laptop-above {
+      width: rem(500);
+    }
+
+    @include laptop {
+      margin-top: rem(52);
+    }
+
+    @include mobile {
+      margin-top: 0;
+    }
+
+    input {
       flex: 1;
-
-      @include laptop-above {
-         width: rem(500);
-      }
-
-      @include laptop {
-         margin-top: rem(52);
-      }
-
-      @include mobile {
-         margin-top: 0;
-      }
-
-      input {
-         flex: 1;
-      }
-   }
+    }
+  }
 }

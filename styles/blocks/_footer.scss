@@ -1,63 +1,63 @@
 @use '/styles/helpers/' as *;
 
 .footer {
-   display: flex;
-   justify-content: space-between;
-   gap: rem(150);
-   align-items: center;
-   font-size: rem(14);
-   padding-block: rem(70);
-   border-top: 1px solid var(--color-form);
+  display: flex;
+  justify-content: space-between;
+  gap: rem(150);
+  align-items: center;
+  font-size: rem(14);
+  padding-block: rem(70);
+  border-top: 1px solid var(--color-form);
 
-   @include tablet {
-      gap: rem(40);
-   }
+  @include tablet {
+    gap: rem(40);
+  }
 
-   @include mobile {
-      flex-direction: column-reverse;
-      align-items: start;
-   }
+  @include mobile {
+    flex-direction: column-reverse;
+    align-items: start;
+  }
 
-   &__header {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: rem(25);
+    max-width: rem(250);
+
+    a {
+      text-decoration: none;
+      color: var(--color-absolute-white);
+    }
+  }
+
+  &__columns {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @include mobile-s {
+      flex-direction: column;
+      gap: rem(30);
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+
+    @include mobile-s {
+      gap: rem(16);
+    }
+
+    &-list {
       display: flex;
       flex-direction: column;
-      gap: rem(25);
-      max-width: rem(250);
-
-      a {
-         text-decoration: none;
-         color: var(--color-absolute-white);
-      }
-   }
-
-   &__columns {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
+      gap: rem(16);
 
       @include mobile-s {
-         flex-direction: column;
-         gap: rem(30);
+        gap: rem(10);
       }
-   }
-
-   &__column {
-      display: flex;
-      flex-direction: column;
-      gap: rem(20);
-
-      @include mobile-s {
-         gap: rem(16);
-      }
-
-      &-list {
-         display: flex;
-         flex-direction: column;
-         gap: rem(16);
-
-         @include mobile-s {
-            gap: rem(10);
-         }
-      }
-   }
+    }
+  }
 }

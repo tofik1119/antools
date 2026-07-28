@@ -1,94 +1,94 @@
 @use '/styles/helpers/' as *;
 
 .hero {
-   display: flex;
-   justify-content: space-between;
-   position: relative;
-   
-   @include mobile {
-      justify-content: center;
-   }
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 
-   &-body {
-      display: flex;
-      flex-direction: column;
-      gap: rem(90);
+  @include mobile {
+    justify-content: center;
+  }
 
-      @include tablet {
-         gap: rem(60);
-      }
+  &-body {
+    display: flex;
+    flex-direction: column;
+    gap: rem(90);
 
-      @include mobile {
-         text-align: center;
-         gap: rem(32);
-      }
-   }
+    @include tablet {
+      gap: rem(60);
+    }
 
-   &-info {
-      display: flex;
-      flex-direction: column;
-      gap: rem(30);
+    @include mobile {
+      text-align: center;
+      gap: rem(32);
+    }
+  }
 
-      @include mobile {
-         gap: rem(16);
-      }
-   }
+  &-info {
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
 
-   &-description {
-      max-width: rem(500);
-   }
+    @include mobile {
+      gap: rem(16);
+    }
+  }
 
-   &-actions {
-      display: flex;
-      flex-direction: column;
-      gap: rem(110);
+  &-description {
+    max-width: rem(500);
+  }
 
-      @include tablet {
-         gap: rem(40);
-         margin-inline: rem(12);
-      }
+  &-actions {
+    display: flex;
+    flex-direction: column;
+    gap: rem(110);
 
-      @include mobile {
-         gap: rem(32);
-      }
-   }
+    @include tablet {
+      gap: rem(40);
+      margin-inline: rem(12);
+    }
 
-   &__search-form {
+    @include mobile {
+      gap: rem(32);
+    }
+  }
+
+  &__search-form {
+    position: relative;
+
+    &::before {
+      content: url(../../icons/search-icon.png);
       position: relative;
-
-      &::before {
-         content: url(../../icons/search-icon.png);
-         position: relative;
-         align-self: center;
-         height: rem(25);
-         width: auto;
-      }
-   }
-
-   &-socials-list {
-      display: flex;
-      gap: rem(8);
-   }
-
-   &-social-link {
-      padding: rem(12);
-      filter: brightness(0) invert(1);
-
-      @include hover {
-         filter: none;
-      }
-   }
-
-   &-banner {
-      position: relative;
-      width: 40vw;
-      height: auto;
       align-self: center;
-      display: block;
-      max-width: rem(600);
+      height: rem(25);
+      width: auto;
+    }
+  }
 
-      @include mobile {
-         display: none;
-      }
-   }
+  &-socials-list {
+    display: flex;
+    gap: rem(8);
+  }
+
+  &-social-link {
+    padding: rem(12);
+    filter: brightness(0) invert(1);
+
+    @include hover {
+      filter: none;
+    }
+  }
+
+  &-banner {
+    position: relative;
+    width: 40vw;
+    height: auto;
+    align-self: center;
+    display: block;
+    max-width: rem(600);
+
+    @include mobile {
+      display: none;
+    }
+  }
 }
